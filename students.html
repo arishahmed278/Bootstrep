@@ -62,12 +62,94 @@
 
                 <h2 class="heading text-white">Students</h2>
 
-                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#studentModal">
+                <div class="d-flex justify-content-end gap-2">
 
-                    Add New
+                    <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight">
+                        Filter
+                    </button>
 
-                </button>
+                    <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#studentModal">
+                        Add New
+                    </button>
 
+                </div>
+
+                <!-- Offcanvas -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title">Filter Students</h5>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas">
+                        </button>
+                    </div>
+
+                    <div class="offcanvas-body">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Batch#</label>
+
+                            <select class="form-select w-50">
+                                <option selected disabled>Select Batch</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold d-block">Gender</label>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="male">
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gender" id="female">
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+                        </div>
+
+
+                        <label for="range4" class="form-label">Age</label>
+                        <input type="range" class="form-range" min="16" max="50" value="16" id="range4">
+                        <output for="range4" id="rangeValue" aria-hidden="true"></output>
+
+                        <script>
+                            // This is an example script, please modify as needed
+                            const rangeInput = document.getElementById('range4');
+                            const rangeOutput = document.getElementById('rangeValue');
+
+                            // Set initial value
+                            rangeOutput.textContent = rangeInput.value;
+
+                            rangeInput.addEventListener('input', function () {
+                                rangeOutput.textContent = this.value;
+                            });
+                        </script>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold d-block">Fees</label>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="fees" id="paid">
+                                <label class="form-check-label" for="paid">Paid</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="fees" id="unpaid">
+                                <label class="form-check-label" for="unpaid">Unpaid</label>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-dark w-40" data-bs-dismiss="offcanvas">
+                            Apply
+                        </button>
+
+                    </div>
+                </div>
             </div>
 
             <div class="container mt-4">
