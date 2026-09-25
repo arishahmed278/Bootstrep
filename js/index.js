@@ -1,5 +1,13 @@
 var email = "arish@gmail.com";
 
+
+var emailInput = document.getElementById("email");
+
+if (emailInput) {
+    emailInput.value = email;
+}
+
+
 function login() {
 
     var userEmail = document.getElementById("email").value;
